@@ -3,8 +3,7 @@
 int I_BANK = 2;
 int I_CH = 3;
 int OUT = 5;
-
-#define dbg true
+#define dbg false
 
 const double CONTINOUSG= 2.85f;
 const double CONTINOUSR = 3.24f;
@@ -48,6 +47,8 @@ void setup() {
   pinMode(I_BANK, INPUT);
   pinMode(I_CH, INPUT);
   pinMode(OUT, OUTPUT);
+
+  TCCR0B = ((TCCR0B & B11111000) | B00000001);
 
   if(dbg){
     Serial.begin(9600);  
