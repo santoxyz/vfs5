@@ -14,12 +14,12 @@ the PWM signal in a continous analog voltage:
 
 ```
 pin5 >------- 1.2KOhm ------ 1.2KOhm ------> out 
-	                         |              |
-	                        47nF           47nF
-	                        _|_            _|_
-                                ///            ///
+	                |              |
+	               47nF           47nF
+	               _|_            _|_ 
+	               ///            ///
 ```
 
-##TODO: use 4 input switches for channel selection
-##TODO: use a led (or two) to signal currently selected bank
-##WARNING: the voltage provided by the amp drops to 4.25V when arduino is connected... see MAX_OUTV const
+### TODO: use 4 input switches for channel selection
+### TODO: use a led (or two) to signal currently selected bank
+### WARNING: the voltage provided by the amp drops to 4.25V when arduino is connected... see MAX_OUTV const
