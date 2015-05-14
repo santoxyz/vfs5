@@ -18,11 +18,8 @@ the PWM signal in a continous analog voltage:
 	                        47nF           47nF
 	                        _|_            _|_
                                 ///            ///
-<code/>
+</code>
 
 ==TODO: use 4 input switches for channel selection==
 ==TODO: use a led (or two) to signal currently selected bank==
 ==WARNING: the voltage provided by the amp drops to 4.25V when arduino is connected... see MAX_OUTV const==
-
-
-
