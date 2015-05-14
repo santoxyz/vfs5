@@ -2,9 +2,9 @@
 
 int I_BANK = 2;
 int I_CH = 3;
-int OUT = 10;
+int OUT = 5;
 
-boolean dbg = true;
+#define dbg true
 
 const double CONTINOUSG= 2.85f;
 const double CONTINOUSR = 3.24f;
@@ -39,6 +39,11 @@ double table(boolean bank, int ch){
 
 // the setup routine runs once when you press reset:
 void setup() {                
+  
+  //Set timer2 freq (ports D9 & D10) to 30KHz
+  //TCCR2B = TCCR2B & B11111000 | B00000001;    // set timer 2 divisor to     1 for PWM frequency of 31372.55 Hz
+  TCCR0B = ((TCCR0B & B11111000) | B00000001); //d5 d6 60khz
+
   // initialize the digital pin as an output.
   pinMode(I_BANK, INPUT);
   pinMode(I_CH, INPUT);
@@ -70,7 +75,6 @@ void loop() {
     bank_state = new_bank_state;
     if(bank_state){
       bank = !bank;
-      v = bank ? CONTINOUSG : CONTINOUSR;
     }
   }
   
@@ -86,9 +90,11 @@ void loop() {
       v = table(bank,ch) ;
   
     }
+  }else {
+      v = bank ? CONTINOUSG : CONTINOUSR;
   }
     
-  int out = v*270/5;  
+  int out = v*255/4.25f;  
   analogWrite(OUT,out);
   if(dbg){
     sprintf(s,"bank %d ",bank);
