@@ -12,14 +12,14 @@ setting the port to the highest possible frequency (~60kHz)
 and apply to it a simple dual pole low-pass filter to convert 
 the PWM signal in a continous analog voltage:
 
-<code>
-   pin5 >------- 1.2KOhm ------ 1.2KOhm ------> out 
+```
+pin5 >------- 1.2KOhm ------ 1.2KOhm ------> out 
 	                         |              |
 	                        47nF           47nF
 	                        _|_            _|_
                                 ///            ///
-</code>
+```
 
-==TODO: use 4 input switches for channel selection==
-==TODO: use a led (or two) to signal currently selected bank==
-==WARNING: the voltage provided by the amp drops to 4.25V when arduino is connected... see MAX_OUTV const==
+##TODO: use 4 input switches for channel selection
+##TODO: use a led (or two) to signal currently selected bank
+##WARNING: the voltage provided by the amp drops to 4.25V when arduino is connected... see MAX_OUTV const
