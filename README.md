@@ -14,11 +14,11 @@
 * and apply to it a simple dual pole low-pass filter to convert 
 * the PWM signal in a continous analog voltage:
 *
-*	pin5 >------- 1.2KOhm ------ 1.2KOhm ------> out 
-*	                         |              |
-*	                        47nF           47nF
-*	                        _|_            _|_
-*                           ///            ///
+   pin5 >------- 1.2KOhm ------ 1.2KOhm ------> out 
+	                         |              |
+	                        47nF           47nF
+	                        _|_            _|_
+                          ///            ///
 *
 *
 * TODO: use 4 input switches for channel selection
